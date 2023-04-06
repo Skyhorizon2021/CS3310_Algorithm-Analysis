@@ -1,11 +1,8 @@
 # Python program to find the resultant
 # product matrix for a given pair of matrices
 # using Divide and Conquer Approach
- 
-ROW_1 = 4
-COL_1 = 4
-ROW_2 = 4
-COL_2 = 4
+import random
+size = 8
  
 #Function to print the matrix
 def printMat(a, r, c):
@@ -96,23 +93,17 @@ def multiply_matrix(matrix_A, matrix_B):
     return result_matrix
  
 # Driver Code
-matrix_A = [ [1, 1, 1, 1],
-            [2, 2, 2, 2],
-            [3, 3, 3, 3],
-            [2, 2, 2, 2] ]
+matrix_A = [[random.randint(0,9) for x in range(size)]for y in range (size)]
  
 print("Array A =>")
-printMat(matrix_A,4,4)
+printMat(matrix_A,size,size)
  
-matrix_B = [ [1, 1, 1, 1],
-            [2, 2, 2, 2],
-            [3, 3, 3, 3],
-            [2, 2, 2, 2] ]
+matrix_B = [[random.randint(0,9) for x in range(size)]for y in range (size)]
  
 print("Array B =>")
-printMat(matrix_B,4,4)
+printMat(matrix_B,size,size)
  
 result_matrix = multiply_matrix(matrix_A, matrix_B)
  
 print("Result Array =>")
-printMat(result_matrix,4,4)
+printMat(result_matrix,size,size)

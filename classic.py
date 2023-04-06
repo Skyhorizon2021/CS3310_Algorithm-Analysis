@@ -1,7 +1,9 @@
 #Name: Loc Nguyen
 #CS3310 Project 1
-import random
-size = 2
+#Classical Matrix Multiplication 
+import random,time
+
+size = 1024
 
 
 #function to multiply matrix
@@ -20,13 +22,25 @@ def printMatrix(matrix, row, col):
         print()
     print()
 #initialize matrices with random number from 0 to 9 and matrixC with 0 then print out matrix for validation            
-print("Matrix A")
-matrixA = [[random.randint(0,9) for x in range(size)]for y in range (size)]
-printMatrix(matrixA,size,size)
-print("Matrix B")
-matrixB = [[random.randint(0,9) for x in range(size)]for y in range (size)]
-printMatrix(matrixB,size,size)           
-matrixC = [[0 for x in range (size)]for y in range (size)]
-multiply(matrixA,matrixB,matrixC)
-print("Matrix C")
-printMatrix(matrixC,size,size)
+trialTime = []
+for i in range(10):
+    print("Trial",i+1)
+    start = time.time()
+    #print("Matrix A")
+    matrixA = [[random.randint(0,9) for x in range(size)]for y in range (size)]
+    #printMatrix(matrixA,size,size)
+    #print("Matrix B")
+    matrixB = [[random.randint(0,9) for x in range(size)]for y in range (size)]
+    #printMatrix(matrixB,size,size)           
+    matrixC = [[0 for x in range (size)]for y in range (size)]
+    multiply(matrixA,matrixB,matrixC)
+    #print("Matrix C")
+    #printMatrix(matrixC,size,size)
+    #end of algo
+    end = time.time()
+    executionTime = end-start
+    trialTime.append(executionTime)
+#sort to find worst and best time to compute average time
+trialTime.sort()
+averageTime = (sum(trialTime)-trialTime[0] - trialTime[len(trialTime)-1])/(8)
+print("Average time is %.5f" % averageTime)
