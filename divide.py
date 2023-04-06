@@ -1,5 +1,6 @@
 #Name: Loc Nguyen
 #CS3310 Project 1
+#Average Divide and Conquer Matrix Multiplication
 import random,time, numpy as np
 
 
