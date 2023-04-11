@@ -3,7 +3,7 @@
 #Classical Matrix Multiplication 
 import random,time
 
-size = 1024
+size = 64
 
 
 #function to multiply matrix
@@ -26,16 +26,16 @@ trialTime = []
 for i in range(10):
     print("Trial",i+1)
     start = time.time()
-    #print("Matrix A")
+    print("Matrix A")
     matrixA = [[random.randint(0,9) for x in range(size)]for y in range (size)]
-    #printMatrix(matrixA,size,size)
-    #print("Matrix B")
+    printMatrix(matrixA,size,size)
+    print("Matrix B")
     matrixB = [[random.randint(0,9) for x in range(size)]for y in range (size)]
-    #printMatrix(matrixB,size,size)           
+    printMatrix(matrixB,size,size)           
     matrixC = [[0 for x in range (size)]for y in range (size)]
     multiply(matrixA,matrixB,matrixC)
-    #print("Matrix C")
-    #printMatrix(matrixC,size,size)
+    print("Matrix C")
+    printMatrix(matrixC,size,size)
     #end of algo
     end = time.time()
     executionTime = end-start
