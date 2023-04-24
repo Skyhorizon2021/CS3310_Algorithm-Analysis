@@ -4,8 +4,7 @@
 import random,time, numpy as np
 
 
-size = 2048
-
+size = 1024
 
 #function to split matrix into quarters
 def split(matrix):

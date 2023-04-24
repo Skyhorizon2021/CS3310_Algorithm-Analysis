@@ -3,7 +3,7 @@
 #Strassen Matrix Multiplication
 import numpy as np, random,time
 
-size = 64
+size = 1024
 def printMatrix(matrix, row, col):
     for i in range(row):
         for j in range(col):
@@ -68,14 +68,14 @@ trialTime = []
 for i in range(10):
     print("Trial",i+1)
     start = time.time()
-    print("Matrix A")
+    #print("Matrix A")
     matrixA = np.array([[random.randint(0,9) for x in range(size)]for y in range (size)])
-    printMatrix(matrixA,size,size)
-    print("Matrix B")
+    #printMatrix(matrixA,size,size)
+    #print("Matrix B")
     matrixB = np.array([[random.randint(0,9) for x in range(size)]for y in range (size)])
-    printMatrix(matrixB,size,size)
-    print("Matrix C")
-    printMatrix(strassen(matrixA,matrixB),size,size)
+    #printMatrix(matrixB,size,size)
+    #print("Matrix C")
+    #printMatrix(strassen(matrixA,matrixB),size,size)
     #end of algorithm
     end = time.time()
     executionTime = end-start
